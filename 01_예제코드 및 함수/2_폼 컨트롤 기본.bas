@@ -15,19 +15,50 @@
 
 위와 마찬가지로, 콤보상자에 데이터도 미리 폼창이 실행되었을 경우 셋팅되어야 할 경우,
 
+  2-1) 목록설정_한개씩 넣어주기
+    Private Sub UserForm_activate()
+      with com거주지
+        .additem "역삼동"
+        .additem "도곡동"
+        .additem "삼성동"
+        .additem "대치동"
+        .additem "기타"
+      end With
+    End Sub
 
-  Private Sub UserForm_activate()
-    with com거주지
-      .additem "역삼동"
-      .additem "도곡동"
-      .additem "삼성동"
-      .additem "대치동"
-      .additem "기타"
+  2-2) 목록설정_엑셀 시트에서 동적으로 범위 설정하여 불러오기 (정적으로 불러오기는 그냥 범위지정.)
+    Private Sub UserForm_activate()
+
+        com검색.RowSource = "'고객목록'!b2:" & Worksheets("고객목록").Range("b1").End(xlDown).Address
+
+    End Sub
+
+  2-3) 콤보상자 드롭다운 박스 수정 시 다른 폼 양식 자동 변경 방법
+
+    Private Sub com검색_Change()
+
+      txt검색할이름 = com검색 'com검색 콤보상자에서 선택한 항목이 txt검색할이름 텍스트상자에 자동으로 값이 입력됨.'
+
+    End Sub
+
+3) 리스트박스
+
+ 3-1) 그냥 넣기
+    with lst신청종목
+      .AddItem "헬스"
+      .additem "요가"
     end With
-  End Sub
 
+  3-2) 조건문으로 넣기.
+    If Worksheets("고객목록").Cells(행, 8) = "O" Then lst신청종목.AddItem "헬스"
+    If Worksheets("고객목록").Cells(행, 9) = "O" Then lst신청종목.AddItem "골프"
+    If Worksheets("고객목록").Cells(행, 10) = "O" Then lst신청종목.AddItem "요가"
+    If Worksheets("고객목록").Cells(행, 11) = "O" Then lst신청종목.AddItem "수영"
 
-3) 이미지 삽입
+  3-3) 리스트 전체 삭제
+    lst신청종목.clear
+
+4) 이미지 삽입
 
   Private Sub com사진_Click()
 
@@ -64,7 +95,7 @@
     End If
 
 
-  4) 스핀단추 연계
+  6) 스핀단추 연계
 
 
 

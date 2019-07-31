@@ -8,7 +8,6 @@
 
       MsgBox Application.WorksheetFunction.Sum(Range("a1:c5"))
 
-
       'Application.WorksheetFunction.
       '엑셀 워크시트에서 사용하는 함수를 사용하기 위해서는 "Application.WorksheetFunction." 을 입력 후 사용할 수 있다.
 
@@ -16,7 +15,10 @@
       Application.WorksheetFunction.CountA(Range("a:a")) + 1
       ' _는 한줄로 쭉 쓴다는 뜻이고 :는 한줄로 썼더라도 enter를 쳤다는 것으로 인식된다.
 
-    '  Application.Quit
+      Application.close '엑셀 워크북 종료'
+      Application.Quit '엑셀 파일 종료'
+
+
 
   End Sub
 ==============================================================================
