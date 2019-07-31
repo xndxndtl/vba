@@ -38,3 +38,54 @@
     txt사진경로 = 사진경로
 
   End Sub
+
+4) 동글뱅이 라디오 버튼
+
+  '라디오버튼 이름을 opt남, opt여로 이름 설정'
+  If opt남 = True Then
+      Worksheets("고객목록").Cells(행, 3) = "남"
+  ElseIf opt여 = True Then
+      Worksheets("고객목록").Cells(행, 3) = "여"
+  End If
+
+5) 체크박스
+  '체크박스 이름 chk헬스,골프으로 총 2개 항목 체크박스 생성
+
+    If chk헬스 = True Then
+        Worksheets("고객목록").Cells(행, 8) = "O"
+    Else
+        Worksheets("고객목록").Cells(행, 8) = "X"
+    End If
+
+    If chk골프 = True Then
+        Worksheets("고객목록").Cells(행, 9) = "O"
+    Else
+        Worksheets("고객목록").Cells(행, 9) = "X"
+    End If
+
+
+  4) 스핀단추 연계
+
+
+
+  5) 체크박스 연계
+
+  8) 연속탭은 무쓸모(겹쳐나옴). 쓰려면 다중페이지로 작성.
+
+  9) 폼창 띄우기 닫기 예제 (버튼)
+
+    9-1) 띄우기
+
+      Sub 신규고객등록()
+
+      신규고객등록.Show
+
+      End Sub
+
+    9-2) 닫기
+
+      Private Sub CommandButton6_Click()
+
+      Me.Hide
+
+      End Sub

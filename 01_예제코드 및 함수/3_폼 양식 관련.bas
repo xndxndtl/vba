@@ -17,5 +17,3 @@
            Worksheets("급여대장").Range("A100000").End(xlUp).Address
 
    End Sub
-
-2) 스핀단추 연계

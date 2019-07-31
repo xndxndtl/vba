@@ -33,3 +33,63 @@ Sub macro2(x As Integer)
     a = PI * x
 
 End Sub
+
+
+Sub 복습문제_입력()
+
+    Dim 값 As Integer
+
+    값 = InputBox("셀에 입력할 값은?")
+
+    Range("a1:c5").Value = 값
+
+    Range("a1").CurrentRegion.Select
+
+    With Selection
+        .Font.Name = "굴림"
+        .Font.Size = 11
+        .Interior.Color = 65535
+    End With
+
+    MsgBox "합계는" & Application.WorksheetFunction.Sum(Selection)
+
+
+End Sub
+
+Sub ddd()
+
+
+    Dim 값 As Integer
+
+    값 = InputBox("셀에 입력할 값은?")
+
+    Range("a1:c5").Value = 값
+
+    Range("a1").CurrentRegion.Select
+
+    With Selection
+        .Font.Name = "굴림"
+        .Font.Size = 11
+        .Interior.Color = 65535
+    End With
+
+    MsgBox "합계는" & Application.WorksheetFunction.Sum(Selection)
+
+
+End Sub
+
+Sub 복습문제_삭제()
+'
+
+    Range("A1:C5").Select
+    Selection.Clear
+
+End Sub
+
+Sub msgbox_test()
+
+Dim result As Byte
+
+result = MsgBox("당신은 남자입니까?", vbYesNo, "남녀구분")
+
+End Sub
